@@ -1,39 +1,193 @@
 @import "tailwindcss";
 
+:root {
+  /* Mode: Light */
+  --color-bg: #f8f5ff;
+  --color-bg-secondary: #f0eafc;
+  --color-section: #e6dbfa;
+
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-surface-hover: #f3e8ff;
+
+  --color-primary: #7c3aed;
+  --color-primary-hover: #6d28d9;
+  --color-primary-soft: #8b5cf6;
+
+  --color-sky: #3b82f6;
+  --color-cloud: #ec4899;
+  --color-star: #eab308;
+
+  --color-text: #1e1b4b;
+  --color-text-secondary: #4c1d95;
+  --color-text-muted: #6b7280;
+
+  --color-border: #ddd6fe;
+  --color-divider: #e0e7ff;
+
+  --shadow-card: 0 10px 30px rgba(124, 58, 237, 0.1);
+  --glow-primary: 0 0 20px rgba(124, 58, 237, 0.2);
+
+  /* Layer Gradients - Light Mode */
+  --hero-gradient: linear-gradient(180deg, #f5f3ff 0%, #e0e7ff 45%, #ddd6fe 100%);
+  --about-gradient: linear-gradient(180deg, #ddd6fe 0%, #c7d2fe 50%, #bae6fd 100%);
+  --work-gradient: linear-gradient(180deg, #bae6fd 0%, #e0f2fe 50%, #f0f9ff 100%);
+  --skills-gradient: linear-gradient(180deg, #f0f9ff 0%, #e0e7ff 100%);
+  --contact-gradient: linear-gradient(180deg, #e0e7ff 0%, #f5f3ff 100%);
+
+  --card-bg-gradient: linear-gradient(145deg, #ffffff, #f3e8ff);
+  --card-border-color: rgba(124, 58, 237, 0.2);
+  --card-border-hover: rgba(124, 58, 237, 0.5);
+  --header-bg: rgba(245, 243, 255, 0.85);
+  --header-scrolled-bg: rgba(230, 225, 250, 0.95);
+  --menu-bg: rgba(245, 243, 255, 0.98);
+  --footer-bg: #e5daf8;
+
+  --heading-color: #2e1065;
+  --icon-box-bg: rgba(124, 58, 237, 0.1);
+  --icon-box-border: rgba(124, 58, 237, 0.2);
+  --icon-box-text: #1e1b4b;
+}
+
+:root[data-theme="dark"] {
+  /* Mode: Dark */
+  --color-bg: #07021d;
+  --color-bg-secondary: #100438;
+  --color-section: #1a0848;
+
+  --color-surface: #25105f;
+  --color-surface-elevated: #321678;
+  --color-surface-hover: #3d1b8a;
+
+  --color-primary: #7c3aed;
+  --color-primary-hover: #9362f5;
+  --color-primary-soft: #b69cff;
+
+  --color-sky: #67a7f7;
+  --color-cloud: #e9b8ed;
+  --color-star: #ffd76a;
+
+  --color-text: #f8f5ff;
+  --color-text-secondary: #cec4e8;
+  --color-text-muted: #9186b3;
+
+  --color-border: #472a78;
+  --color-divider: #38205f;
+
+  --shadow-card: 0 16px 40px rgba(3, 0, 20, 0.55);
+  --glow-primary: 0 0 28px rgba(124, 58, 237, 0.35);
+
+  /* Layer Gradients - Dark Mode */
+  --hero-gradient: radial-gradient(circle at 70% 20%, rgba(124, 58, 237, 0.28), transparent 35%), linear-gradient(180deg, #07021d 0%, #100438 45%, #25105f 100%);
+  --about-gradient: linear-gradient(180deg, #25105f 0%, #372378 50%, #49358a 100%);
+  --work-gradient: linear-gradient(180deg, #263a86 0%, #3552ab 50%, #476fd0 100%);
+  --skills-gradient: linear-gradient(180deg, #21134f 0%, #140a37 100%);
+  --contact-gradient: linear-gradient(180deg, #10052e 0%, #07021d 100%);
+
+  --card-bg-gradient: linear-gradient(145deg, #291166, #18083f);
+  --card-border-color: rgba(182, 156, 255, 0.2);
+  --card-border-hover: rgba(182, 156, 255, 0.55);
+  --header-bg: rgba(15, 12, 41, 0.85);
+  --header-scrolled-bg: rgba(7, 2, 29, 0.95);
+  --menu-bg: rgba(15, 12, 41, 0.98);
+  --footer-bg: #07021d;
+
+  --heading-color: #ffffff;
+  --icon-box-bg: rgba(255, 255, 255, 0.1);
+  --icon-box-border: rgba(255, 255, 255, 0.15);
+  --icon-box-text: #ffffff;
+}
+
 @theme {
   --font-sans: "Nunito", sans-serif;
   --font-heading: "Comic Neue", cursive;
 
-  --color-space-dark: #0f0c29;
-  --color-space-purple: #302b63;
-  --color-space-light: #24243e;
-  --color-primary: #8b5cf6;
-  --color-secondary: #c4b5fd;
-  --color-accent: #a78bfa;
-  --color-card-bg: rgba(255, 255, 255, 0.1);
-
-  --background-image-hero-gradient: linear-gradient(to bottom, #1e1b4b, #2e1065, #4c1d95, #6d28d9, #8b5cf6, #a78bfa, #c4b5fd, #ddd6fe, #f5f3ff);
-  --background-image-sky-gradient: linear-gradient(to bottom, #a78bfa, #818cf8, #60a5fa, #93c5fd, #bfdbfe, #dbeafe);
-  --background-image-sunset-gradient: linear-gradient(to bottom, #fbcfe8, #f9a8d4, #f472b6, #fb7185, #f87171, #fb923c, #fcd34d);
+  --color-space-dark: var(--color-bg);
+  --color-space-purple: var(--color-bg-secondary);
+  --color-space-light: var(--color-surface);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-primary-soft);
+  --color-accent: var(--color-primary-hover);
 }
 
 @utility glass-panel {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--color-border);
 }
 
-@utility text-gradient {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero-section {
+  background: var(--hero-gradient);
+  color: var(--color-text);
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
-@utility section-curve {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  line-height: 0;
+.about-section {
+  background: var(--about-gradient);
+  color: var(--color-text);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.work-section {
+  background: var(--work-gradient);
+  color: var(--color-text);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.skills-section {
+  background: var(--skills-gradient);
+  color: var(--color-text);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.contact-section {
+  background: var(--contact-gradient);
+  color: var(--color-text);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.project-card {
+  color: var(--color-text);
+  background: var(--card-bg-gradient);
+  border: 1px solid var(--card-border-color);
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: var(--card-border-hover);
+  box-shadow: var(--shadow-card), var(--glow-primary);
+}
+
+.stat-card {
+  background: var(--icon-box-bg);
+  border: 1px solid var(--icon-box-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--icon-box-text);
+  transition: all 0.3s ease;
+}
+
+.button-primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+  transition: all 0.3s ease;
+}
+
+.button-primary:hover {
+  background: linear-gradient(135deg, var(--color-primary-hover), var(--color-primary));
+  box-shadow: var(--glow-primary);
+}
+
+.button-secondary {
+  color: var(--color-text);
+  background: var(--icon-box-bg);
+  border: 1px solid var(--card-border-color);
+  transition: all 0.3s ease;
+}
+
+.button-secondary:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--card-border-hover);
 }
