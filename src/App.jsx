@@ -102,7 +102,7 @@ function MainContent() {
               <img
                 alt="3D cute cartoon astronaut sitting on a purple planet"
                 className="relative z-10 w-full h-full object-contain filter drop-shadow-2xl drop-shadow-[0_0_30px_rgba(124,58,237,0.3)] animate-[bounce_4s_ease-in-out_infinite]"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0RxO08LAhYi02lwg2RSJKKkEuauP1-XBS_bQgYnvywVphxPlCFjqrnzajJosfF4yZKrfkaPK6SmWb1yuiNEceb6c8wAJwFEDTOZBvy27jldoO6ZHCAATa4latpf07tMj0Z9QRvzs1Tsib4qleQmorEbK_DTUabBnua7AEK4ehVE0VeCurYQ1Rv7XjaOvCQPbDwX54uLCWydsK_5uKvNd_87t74i6QBC_Dr634zKVGAmTMLqqeEklz"
+                src="astronauta.png"
               />
             </div>
           </div>
@@ -112,9 +112,11 @@ function MainContent() {
           <svg className="w-full h-auto text-[var(--color-border)] opacity-30 fill-current" viewBox="0 0 1440 320">
             <path d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
           </svg>
-          <svg className="w-full h-auto text-[var(--color-border)] opacity-50 fill-current absolute bottom-0 transform translate-y-4" viewBox="0 0 1440 320">
-            <path d="M0,224L60,213.3C120,203,240,181,360,186.7C480,192,600,224,720,213.3C840,203,960,149,1080,133.3C1200,117,1320,139,1380,149.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-          </svg>
+          <div
+            className="w-full h-96 absolute bottom-0 left-0 bg-repeat-x bg-bottom bg-contain"
+            style={{ backgroundImage: 'url(nubes.png)' }}
+          />
+
         </div>
       </SectionContainer>
       {/* END: Hero Section */}
@@ -130,18 +132,51 @@ function MainContent() {
             <div className="absolute -bottom-2 w-full h-3 bg-[var(--color-star)]/30 rounded-full transform -rotate-2"></div>
             <i className="fa-solid fa-star text-[var(--color-star)] absolute -top-4 -left-6 text-xl"></i>
           </div>
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div className="space-y-6 text-[var(--color-text-secondary)] text-lg font-medium leading-relaxed">
-              <p>
-                I'm a passionate Full-Stack Developer who enjoys building modern, user-friendly web
-                applications. I love turning ideas into real products and constantly learning new technologies
-                to create better experiences.
-              </p>
-              <p>
-                When I'm not coding, you'll find me exploring space (virtually), listening to music, or
-                sketching ideas for my next project.
-              </p>
+          <div className="grid md:grid-cols-3 gap-12 items-center mb-16">
+            <div className="grid md:col-span-2 gap-6">
+              <div className="space-y-6 text-[var(--color-text-secondary)] text-3xl font-medium leading-relaxed">
+                <p>
+                  I'm a passionate Full-Stack Developer who enjoys building modern, user-friendly web
+                  applications. I love turning ideas into real products and constantly learning new technologies
+                  to create better experiences.
+                </p>
+                <p>
+                  When I'm not coding, you'll find me exploring space (virtually), listening to music, or
+                  sketching ideas for my next project.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div className="stat-card rounded-2xl p-6 flex flex-col items-center text-center gap-4 shadow-lg hover:shadow-xl transition-all cursor-default group">
+                  <div className="w-12 h-12 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center text-xl group-hover:scale-110 transition-transform shadow-md">
+                    <i className="fa-solid fa-rocket"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[var(--heading-color)]">Experience</h4>
+                    <p className="text-sm text-[var(--color-text-secondary)]">2+ Years</p>
+                  </div>
+                </div>
+                <div className="stat-card rounded-2xl p-6 flex flex-col items-center text-center gap-4 shadow-lg hover:shadow-xl transition-all cursor-default group">
+                  <div className="w-12 h-12 rounded-full bg-[var(--color-primary-soft)] text-white flex items-center justify-center text-xl group-hover:scale-110 transition-transform shadow-md">
+                    <i className="fa-solid fa-code"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[var(--heading-color)]">Projects</h4>
+                    <p className="text-sm text-[var(--color-text-secondary)]">10+ Completed</p>
+                  </div>
+                </div>
+                <div className="stat-card rounded-2xl p-6 flex flex-col items-center text-center gap-4 shadow-lg hover:shadow-xl transition-all cursor-default group">
+                  <div className="w-12 h-12 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center text-xl group-hover:scale-110 transition-transform shadow-md">
+                    <i className="fa-solid fa-heart"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[var(--heading-color)]">Focus</h4>
+                    <p className="text-sm text-[var(--color-text-secondary)]">Clean Code & Great UX</p>
+                  </div>
+                </div>
+              </div>
             </div>
+
+
             <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-[var(--color-border)]">
               <div className="absolute top-3 right-4 flex gap-2 z-10">
                 <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -152,44 +187,16 @@ function MainContent() {
               <img
                 alt="Developer Workspace"
                 className="w-full h-auto object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_dbrvhOmes5-5KJa8O81IcWFBOQlDJcgRhcou0YvUBuqo5iDi72N7G6epLhD6W4bPjCcABiKR-pTx9ZM89rVvo66FJVxfMPCTdC0jpEmLWuGcfAqhe3ImmwiBs8SI2LOqwqntgEaOwwPbhigHUQe6I5YDdTySfdsei7Kn2LCQhKaTCMUEU1jQeCnHA1vZ_udhTCgqTbc_T3h-UDJRojDrB9in5bZfyS5cqvTNWS0YNwKqdNPjcDtO"
+                src="foto.png"
               />
             </div>
+
           </div>
           {/* Stats/Features Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="stat-card rounded-2xl p-6 flex flex-col items-center text-center gap-4 shadow-lg hover:shadow-xl transition-all cursor-default group">
-              <div className="w-12 h-12 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center text-xl group-hover:scale-110 transition-transform shadow-md">
-                <i className="fa-solid fa-rocket"></i>
-              </div>
-              <div>
-                <h4 className="font-bold text-[var(--heading-color)]">Experience</h4>
-                <p className="text-sm text-[var(--color-text-secondary)]">3+ Years</p>
-              </div>
-            </div>
-            <div className="stat-card rounded-2xl p-6 flex flex-col items-center text-center gap-4 shadow-lg hover:shadow-xl transition-all cursor-default group">
-              <div className="w-12 h-12 rounded-full bg-[var(--color-primary-soft)] text-white flex items-center justify-center text-xl group-hover:scale-110 transition-transform shadow-md">
-                <i className="fa-solid fa-code"></i>
-              </div>
-              <div>
-                <h4 className="font-bold text-[var(--heading-color)]">Projects</h4>
-                <p className="text-sm text-[var(--color-text-secondary)]">20+ Completed</p>
-              </div>
-            </div>
-            <div className="stat-card rounded-2xl p-6 flex flex-col items-center text-center gap-4 shadow-lg hover:shadow-xl transition-all cursor-default group">
-              <div className="w-12 h-12 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center text-xl group-hover:scale-110 transition-transform shadow-md">
-                <i className="fa-solid fa-heart"></i>
-              </div>
-              <div>
-                <h4 className="font-bold text-[var(--heading-color)]">Focus</h4>
-                <p className="text-sm text-[var(--color-text-secondary)]">Clean Code & Great UX</p>
-              </div>
-            </div>
-          </div>
         </div>
         {/* Clouds Transition to Work */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg className="w-full h-16 md:h-24 text-[var(--color-sky)] opacity-40 fill-current" preserveAspectRatio="none" viewBox="0 0 1200 120">
+          <svg className="w-full h-16 md:h-24 text-[var(--color-sky)] opacity-40 fill-current rotate-180" preserveAspectRatio="none" viewBox="0 0 1200 120">
             <path
               className="shape-fill"
               d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"

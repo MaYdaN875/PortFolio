@@ -79,7 +79,7 @@
 
   /* Layer Gradients - Dark Mode */
   --hero-gradient: radial-gradient(circle at 70% 20%, rgba(124, 58, 237, 0.28), transparent 35%), linear-gradient(180deg, #07021d 0%, #100438 45%, #25105f 100%);
-  --about-gradient: linear-gradient(180deg, #25105f 0%, #372378 50%, #49358a 100%);
+  --about-gradient: #7a689d;
   --work-gradient: linear-gradient(180deg, #263a86 0%, #3552ab 50%, #476fd0 100%);
   --skills-gradient: linear-gradient(180deg, #21134f 0%, #140a37 100%);
   --contact-gradient: linear-gradient(180deg, #10052e 0%, #07021d 100%);
