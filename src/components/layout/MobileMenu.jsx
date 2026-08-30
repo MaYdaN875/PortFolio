@@ -1,9 +1,10 @@
-import React from 'react'
-import { NAV_ITEMS } from './Navigation'
+import { NAV_ITEMS } from '../../constants/navigation'
 import { useTheme } from '../../context/ThemeContext'
+import { useLanguage } from '../../context/LanguageContext'
 
 function MobileMenu({ isOpen, onClose, activeSection, onLinkClick }) {
   const { theme, toggleTheme } = useTheme()
+  const { language, toggleLanguage, t } = useLanguage()
 
   return (
     <div
@@ -59,7 +60,7 @@ function MobileMenu({ isOpen, onClose, activeSection, onLinkClick }) {
                 }`}
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-current"></span>
-                {item.label}
+                {t.nav[item.translationKey]}
               </a>
             )
           })}
@@ -68,20 +69,28 @@ function MobileMenu({ isOpen, onClose, activeSection, onLinkClick }) {
         {/* Additional Mobile Content / Controls */}
         <div className="mt-auto border-t border-[var(--color-divider)] pt-6 space-y-4">
           <div className="flex items-center justify-between text-[var(--color-text-secondary)] text-sm">
-            <span>Idioma</span>
-            <span className="text-[var(--color-text)] font-semibold flex items-center gap-1 cursor-pointer">
-              EN <i className="fa-solid fa-chevron-down text-xs"></i>
-            </span>
+            <span>{language === 'es' ? 'Idioma' : 'Language'}</span>
+            <button
+              onClick={toggleLanguage}
+              className="text-[var(--color-text)] font-semibold flex items-center gap-1.5 cursor-pointer hover:text-[var(--color-primary)] focus:outline-none"
+            >
+              <span>{language.toUpperCase()}</span>
+              <i className="fa-solid fa-globe text-xs"></i>
+            </button>
           </div>
           <div className="flex items-center justify-between text-[var(--color-text-secondary)] text-sm">
-            <span>Tema</span>
+            <span>{language === 'es' ? 'Tema' : 'Theme'}</span>
             <button
               onClick={toggleTheme}
               className="text-[var(--color-text)] hover:text-[var(--color-primary)] p-1 flex items-center gap-2 cursor-pointer"
               aria-label="Alternar tema"
             >
               <i className={`fa-solid ${theme === 'dark' ? 'fa-sun text-yellow-300 text-lg' : 'fa-moon text-indigo-600 text-lg'}`}></i>
-              <span className="text-xs font-semibold">{theme === 'dark' ? 'Modo Oscuro' : 'Modo Claro'}</span>
+              <span className="text-xs font-semibold">
+                {theme === 'dark'
+                  ? (language === 'es' ? 'Oscuro' : 'Dark')
+                  : (language === 'es' ? 'Claro' : 'Light')}
+              </span>
             </button>
           </div>
         </div>

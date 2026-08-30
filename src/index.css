@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./styles/stars.css";
 
 :root {
   /* Mode: Light */
@@ -29,8 +30,8 @@
   --glow-primary: 0 0 20px rgba(124, 58, 237, 0.2);
 
   /* Layer Gradients - Light Mode */
-  --hero-gradient: linear-gradient(180deg, #f5f3ff 0%, #e0e7ff 45%, #ddd6fe 100%);
-  --about-gradient: linear-gradient(180deg, #ddd6fe 0%, #c7d2fe 50%, #bae6fd 100%);
+  --hero-gradient: linear-gradient(to bottom, #bde0fd, #ebf4fd);
+  --about-gradient: #fbf9fa;
   --work-gradient: linear-gradient(180deg, #bae6fd 0%, #e0f2fe 50%, #f0f9ff 100%);
   --skills-gradient: linear-gradient(180deg, #f0f9ff 0%, #e0e7ff 100%);
   --contact-gradient: linear-gradient(180deg, #e0e7ff 0%, #f5f3ff 100%);
@@ -78,9 +79,9 @@
   --glow-primary: 0 0 28px rgba(124, 58, 237, 0.35);
 
   /* Layer Gradients - Dark Mode */
-  --hero-gradient: radial-gradient(circle at 70% 20%, rgba(124, 58, 237, 0.28), transparent 35%), linear-gradient(180deg, #07021d 0%, #100438 45%, #25105f 100%);
-  --about-gradient: #7a689d;
-  --work-gradient: linear-gradient(180deg, #263a86 0%, #3552ab 50%, #476fd0 100%);
+  --hero-gradient: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  --about-gradient: linear-gradient(to bottom, #060a2f, #040d4c);
+  --work-gradient: linear-gradient(to bottom, #040d4c, #1f2182);
   --skills-gradient: linear-gradient(180deg, #21134f 0%, #140a37 100%);
   --contact-gradient: linear-gradient(180deg, #10052e 0%, #07021d 100%);
 
@@ -108,6 +109,23 @@
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-primary-soft);
   --color-accent: var(--color-primary-hover);
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+      transform: translate3d(0, -8px, 0);
+    }
+  }
+}
+
+.animate-float {
+  will-change: transform;
 }
 
 @utility glass-panel {
@@ -152,10 +170,12 @@
   background: var(--card-bg-gradient);
   border: 1px solid var(--card-border-color);
   box-shadow: var(--shadow-card);
-  transition: all 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  will-change: transform;
 }
 
 .project-card:hover {
+  transform: translateY(-8px) scale(1.04);
   border-color: var(--card-border-hover);
   box-shadow: var(--shadow-card), var(--glow-primary);
 }
@@ -166,7 +186,12 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: var(--icon-box-text);
-  transition: all 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  will-change: transform;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px) scale(1.05);
 }
 
 .button-primary {
@@ -190,4 +215,8 @@
 .button-secondary:hover {
   background: var(--color-surface-hover);
   border-color: var(--card-border-hover);
+}
+
+.container {
+  max-width: 1280px !important;
 }

@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Navigation from './Navigation'
 import { useTheme } from '../../context/ThemeContext'
+import { useLanguage } from '../../context/LanguageContext'
 
 function Header({ activeSection, onMenuOpen, onLinkClick }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const { theme, toggleTheme } = useTheme()
+  const { language, toggleLanguage } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,16 +24,15 @@ function Header({ activeSection, onMenuOpen, onLinkClick }) {
 
   return (
     <header
-      className={`fixed top-0 w-full z-30 transition-all duration-300 px-6 md:px-12 flex justify-between items-center ${
-        isScrolled
-          ? 'glass-panel bg-[var(--header-scrolled-bg)] shadow-2xl py-3'
-          : 'glass-panel bg-[var(--header-bg)] py-5'
-      }`}
+      className={`fixed top-0 w-full z-30 transition-all duration-300 px-6 md:px-12 flex justify-between items-center ${isScrolled
+        ? 'shadow-2xl py-3'
+        : ' py-5'
+        }`}
     >
       {/* Brand logo */}
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-[var(--color-primary)] shadow-sm">
-          <i className="fa-solid fa-user-astronaut text-2xl text-[var(--color-primary)]"></i>
+        <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-sm">
+          <img src="iconMaydan.png" alt="" />
         </div>
         <span className="font-heading text-2xl font-bold text-[var(--heading-color)] tracking-wide">
           MaYdaN
@@ -47,11 +48,14 @@ function Header({ activeSection, onMenuOpen, onLinkClick }) {
       {/* Header Actions */}
       <div className="flex items-center gap-4 md:gap-6">
         {/* Language selector */}
-        <div className="hidden sm:block relative cursor-pointer group">
-          <span className="text-[var(--color-text)] font-semibold flex items-center gap-1 hover:text-[var(--color-primary-soft)] transition-colors">
-            EN <i className="fa-solid fa-chevron-down text-xs"></i>
-          </span>
-        </div>
+        <button
+          onClick={toggleLanguage}
+          className="hidden sm:flex items-center gap-1.5 text-[var(--color-text)] font-semibold hover:text-[var(--color-primary-soft)] transition-colors cursor-pointer focus:outline-none"
+          title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+        >
+          <span>{language.toUpperCase()}</span>
+          <i className="fa-solid fa-globe text-xs"></i>
+        </button>
 
         {/* Theme toggle */}
         <button

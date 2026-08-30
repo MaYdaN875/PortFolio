@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "work": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy Angel",
+    "role": "Desarrollador Full-Stack",
+    "tagline": "Los mejores programas comienzan con una pequeña línea de código",
+    "cvSpanish": "CV - Español",
+    "cvEnglish": "CV - Inglés"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "text1": "Soy un apasionado Desarrollador Full-Stack al que le encanta crear aplicaciones web modernas y fáciles de usar. Me apasiona convertir ideas en productos reales y aprender constantemente nuevas tecnologías para brindar mejores experiencias.",
+    "text2": "Cuando no estoy programando, me encontrarás explorando el espacio (virtualmente), escuchando música o dibujando ideas para mi próximo proyecto.",
+    "stats": {
+      "experience": "Experiencia",
+      "expValue": "2+ Años",
+      "projects": "Proyectos",
+      "projValue": "10+ Completados",
+      "focus": "Enfoque",
+      "focusValue": "Código Limpio y Excelente UX"
+    }
+  },
+  "work": {
+    "title": "Proyectos",
+    "viewProject": "Ver Proyecto",
+    "projects": {
+      "taskflow": {
+        "title": "GodArt",
+        "description": "Plataforma de comercio electrónico para una papelería, con catálogo de productos, variantes, carrito de compras, pagos en línea y gestión de pedidos. Incluye un panel administrativo para controlar productos, inventario, promociones, clientes, carruseles y contenido de la tienda."
+      },
+      "posElectron": {
+        "title": "POS electron",
+        "description": "Sistema de Punto de Venta (POS) integral y de alto rendimiento, diseñado específicamente para papelerías y comercios minoristas. Está construido bajo un esquema híbrido que combina una interfaz de escritorio nativa mediante Electron y una API backend ligera en PHP con MySQL."
+      },
+      "Osseous": {
+        "title": "Osseous",
+        "description": "Plataforma de comercio electrónico con carrito de compras, pagos y seguimiento de pedidos."
+      },
+      "portfolio": {
+        "title": "Portfolio",
+        "description": "Mi portfolio personal, construido con React y Tailwind CSS, que muestra mis proyectos y habilidades como desarrollador."
+      },
+      "gifexpertapp": {
+        "title": "GifExpertApp",
+        "description": "Aplicación web que permite buscar y visualizar GIFs animados utilizando la API de Giphy. Los usuarios pueden ingresar términos de búsqueda y explorar una amplia variedad de GIFs relacionados con sus intereses."
+      }
+    }
+  },
+  "skills": {
+    "title": "Habilidades y Tecnologías"
+  },
+  "contact": {
+    "title": "¡Conectemos!",
+    "subtitle": "Siempre estoy abierto a nuevas oportunidades, proyectos interesantes o simplemente a un saludo amistoso. ¡No dudes en contactarme!",
+    "emailLabel": "hello@maydan.dev",
+    "locationLabel": "En algún lugar de la Tierra 🌍",
+    "button": "Envíame un mensaje"
+  },
+  "footer": {
+    "tagline": "Construyendo ideas. Diseñando experiencias. Creando el futuro.",
+    "rights": "Todos los derechos reservados."
+  }
+}

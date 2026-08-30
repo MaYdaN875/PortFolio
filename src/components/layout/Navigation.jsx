@@ -1,13 +1,9 @@
-import React from 'react'
+import { useLanguage } from '../../context/LanguageContext'
+import { NAV_ITEMS } from '../../constants/navigation'
 
-const NAV_ITEMS = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'work', label: 'Work' },
-  { id: 'contact', label: 'Contact' },
-]
+export default function Navigation({ activeSection, className = 'hidden md:flex gap-8', onLinkClick }) {
+  const { t } = useLanguage()
 
-function Navigation({ activeSection, className = 'hidden md:flex gap-8', onLinkClick }) {
   return (
     <nav className={className}>
       {NAV_ITEMS.map((item) => {
@@ -27,13 +23,10 @@ function Navigation({ activeSection, className = 'hidden md:flex gap-8', onLinkC
                 : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text)] border-transparent hover:border-[var(--color-border)]'
             }`}
           >
-            {item.label}
+            {t.nav[item.translationKey]}
           </a>
         )
       })}
     </nav>
   )
 }
-
-export default Navigation
-export { NAV_ITEMS }

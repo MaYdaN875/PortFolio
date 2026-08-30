@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "work": "Work",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm Angel",
+    "role": "Full-Stack Developer",
+    "tagline": "The greatest programs starts with a small line code",
+    "cvSpanish": "CV - Spanish",
+    "cvEnglish": "CV - English"
+  },
+  "about": {
+    "title": "About",
+    "text1": "I'm a passionate Full-Stack Developer who enjoys building modern, user-friendly web applications. I love turning ideas into real products and constantly learning new technologies to create better experiences.",
+    "text2": "When I'm not coding, you'll find me exploring space (virtually), listening to music, or sketching ideas for my next project.",
+    "stats": {
+      "experience": "Experience",
+      "expValue": "2+ Years",
+      "projects": "Projects",
+      "projValue": "10+ Completed",
+      "focus": "Focus",
+      "focusValue": "Clean Code & Great UX"
+    }
+  },
+  "work": {
+    "title": "Work",
+    "viewProject": "View Project",
+    "projects": {
+      "taskflow": {
+        "title": "GodArt",
+        "description": "E-commerce platform for a stationery store, featuring a product catalog, variations, shopping cart, online payments, and order management. It includes an administrative panel for managing products, inventory, promotions, customers, carousels, and store content."
+      },
+      "posElectron": {
+        "title": "POS electron",
+        "description": "A comprehensive, high-performance Point of Sale (POS) system designed specifically for stationery stores and retail businesses. Its built on a hybrid architecture that combines a native desktop interface using Electron with a lightweight PHP backend API and MySQL."
+      },
+      "Osseous": {
+        "title": "Osseous",
+        "description": "E-commerce platform featuring a shopping cart, online payments, and order tracking."
+      },
+      "portfolio": {
+        "title": "Portfolio",
+        "description": "My personal portfolio, built with React and Tailwind CSS, showcasing my projects and skills as a developer."
+      },
+      "gifexpertapp": {
+        "title": "GifExpertApp",
+        "description": "A web application that allows users to search and view animated GIFs using the Giphy API. Users can enter search terms and explore a wide variety of GIFs related to their interests."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills & Technologies"
+  },
+  "contact": {
+    "title": "Let's Connect!",
+    "subtitle": "I'm always open to new opportunities, interesting projects, or just a friendly hello. Feel free to reach out!",
+    "emailLabel": "hello@maydan.dev",
+    "locationLabel": "Somewhere on Earth 🌍",
+    "button": "Send Me a Message"
+  },
+  "footer": {
+    "tagline": "Building ideas. Crafting experiences. Creating the future.",
+    "rights": "All rights reserved."
+  }
+}
