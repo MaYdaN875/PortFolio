@@ -22,7 +22,7 @@ function MainContent() {
   }
 
   return (
-    <div className="font-sans antialiased overflow-x-hidden bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-500 relative">
+    <div className="font-sans antialiased overflow-x-clip bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-500 relative">
       {/* Header Layout */}
       <Header
         activeSection={activeSection}

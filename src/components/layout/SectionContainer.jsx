@@ -1,7 +1,12 @@
-export default function SectionContainer({ id, className = '', children }) {
+import { forwardRef } from 'react'
+
+const SectionContainer = forwardRef(({ id, className = '', children }, ref) => {
   return (
-    <section id={id} className={`relative min-h-screen ${className}`}>
+    <section id={id} ref={ref} className={`relative min-h-screen ${className}`}>
       {children}
     </section>
   )
-}
+})
+
+SectionContainer.displayName = 'SectionContainer'
+export default SectionContainer

@@ -28,6 +28,11 @@
   "work": {
     "title": "Work",
     "viewProject": "View Project",
+    "seeMore": {
+      "title": "Want to see more?",
+      "subtitle": "Explore all of my projects and creations",
+      "button": "See All Works"
+    },
     "projects": {
       "taskflow": {
         "title": "GodArt",

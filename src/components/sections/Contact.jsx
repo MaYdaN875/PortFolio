@@ -1,5 +1,6 @@
 import SectionContainer from '../layout/SectionContainer'
 import { useLanguage } from '../../context/LanguageContext'
+import Reveal from '../common/Reveal'
 
 export default function Contact() {
   const { t } = useLanguage()
@@ -16,14 +17,18 @@ export default function Contact() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center">
-        <h2 className="text-5xl font-bold font-heading text-[var(--heading-color)] mb-6">
-          {t.contact.title}
-        </h2>
-        <p className="text-[var(--color-text-secondary)] max-w-lg mx-auto mb-10 font-medium text-lg">
-          {t.contact.subtitle}
-        </p>
+        <Reveal variant="fade-up">
+          <h2 className="text-5xl font-bold font-heading text-[var(--heading-color)] mb-6">
+            {t.contact.title}
+          </h2>
+        </Reveal>
+        <Reveal variant="fade-up" delay={150}>
+          <p className="text-[var(--color-text-secondary)] max-w-lg mx-auto mb-10 font-medium text-lg">
+            {t.contact.subtitle}
+          </p>
+        </Reveal>
 
-        <div className="flex flex-col items-center gap-4 mb-10">
+        <Reveal variant="fade-up" delay={300} className="flex flex-col items-center gap-4 mb-10">
           <a
             className="flex items-center gap-3 text-[var(--color-text)] hover:text-[var(--color-primary-soft)] transition-colors bg-[var(--icon-box-bg)] px-6 py-2 rounded-full backdrop-blur-md border border-[var(--icon-box-border)]"
             href={`mailto:${t.contact.emailLabel}`}
@@ -36,15 +41,17 @@ export default function Contact() {
             <i className="fa-solid fa-location-dot text-xl text-red-400"></i>
             <span className="font-semibold">{t.contact.locationLabel}</span>
           </div>
-        </div>
+        </Reveal>
 
-        <a
-          href={`mailto:${t.contact.emailLabel}`}
-          className="button-primary px-8 py-4 rounded-full font-bold text-lg inline-flex items-center gap-3 mx-auto shadow-2xl hover:scale-105 transform transition-transform"
-        >
+        <Reveal variant="zoom-in" delay={450}>
+          <a
+            href={`mailto:${t.contact.emailLabel}`}
+            className="button-primary px-8 py-4 rounded-full font-bold text-lg inline-flex items-center gap-3 mx-auto shadow-2xl hover:scale-105 transform transition-transform"
+          >
           <i className="fa-solid fa-paper-plane"></i>
           {t.contact.button}
         </a>
+        </Reveal>
       </div>
 
       {/* Gradient Overlay at bottom for footer transition */}

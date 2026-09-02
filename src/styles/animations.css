@@ -1,0 +1,119 @@
+/* Scroll Reveal Animation Styles */
+
+.reveal-fade-up {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-down {
+  opacity: 0;
+  transform: translate3d(0, -30px, 0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-left {
+  opacity: 0;
+  transform: translate3d(30px, 0, 0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-right {
+  opacity: 0;
+  transform: translate3d(-30px, 0, 0);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-zoom-in {
+  opacity: 0;
+  transform: scale3d(0.95, 0.95, 0.95);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Active States */
+.reveal-fade-up.is-revealed,
+.reveal-fade-down.is-revealed,
+.reveal-fade-left.is-revealed,
+.reveal-fade-right.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal-zoom-in.is-revealed {
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+}
+
+/* Projects Sticky Horizontal Scroll Parallax */
+.work-horizontal-track {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  transform: none;
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .work-horizontal-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .work-sticky-parent {
+    height: 220vh !important;
+    position: relative;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .work-sticky-child {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .work-horizontal-track {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    padding-left: calc(50vw - 200px); /* Center the first card initially */
+    padding-right: 15vw;
+    width: max-content;
+    /* Translate from center to left based on scroll progress */
+    transform: translate3d(calc(var(--scroll-progress, 0) * -2200px), 0, 0);
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+  }
+
+  .work-card-wrapper {
+    width: 400px;
+    flex-shrink: 0;
+  }
+
+  .project-card {
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+  }
+
+  .project-card img {
+    transform: scale(1.1) translateX(calc((var(--scroll-progress, 0.5) - 0.5) * 40px));
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+  }
+}

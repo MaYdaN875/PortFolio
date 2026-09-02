@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./styles/stars.css";
+@import "./styles/animations.css";
 
 :root {
   /* Mode: Light */
