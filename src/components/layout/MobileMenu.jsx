@@ -1,6 +1,6 @@
 import { NAV_ITEMS } from '../../constants/navigation'
-import { useTheme } from '../../context/ThemeContext'
-import { useLanguage } from '../../context/LanguageContext'
+import { useTheme } from '../../context/useTheme'
+import { useLanguage } from '../../context/useLanguage'
 
 function MobileMenu({ isOpen, onClose, activeSection, onLinkClick }) {
   const { theme, toggleTheme } = useTheme()

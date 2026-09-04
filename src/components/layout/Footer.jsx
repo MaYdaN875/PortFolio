@@ -1,4 +1,4 @@
-import { useLanguage } from '../../context/LanguageContext'
+import { useLanguage } from '../../context/useLanguage'
 
 function Footer() {
   const { t } = useLanguage()
@@ -8,7 +8,7 @@ function Footer() {
       <div className="container mx-auto px-6 flex flex-col items-center text-center">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden border border-[var(--color-primary)] shadow-sm">
-            <i className="fa-solid fa-user-astronaut text-xl text-[var(--color-primary)]"></i>
+            <img src="iconMaydan.png" alt="" />
           </div>
           <span className="font-heading text-2xl font-bold text-[var(--heading-color)] tracking-wide">
             MaYdaN

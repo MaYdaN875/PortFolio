@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Navigation from './Navigation'
-import { useTheme } from '../../context/ThemeContext'
-import { useLanguage } from '../../context/LanguageContext'
+import { useTheme } from '../../context/useTheme'
+import { useLanguage } from '../../context/useLanguage'
 
 function Header({ activeSection, onMenuOpen, onLinkClick }) {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -10,13 +10,11 @@ function Header({ activeSection, onMenuOpen, onLinkClick }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
+      const shouldBeScrolled = window.scrollY > 50
+      setIsScrolled((current) => (current === shouldBeScrolled ? current : shouldBeScrolled))
     }
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }

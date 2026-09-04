@@ -80,10 +80,10 @@
   --glow-primary: 0 0 28px rgba(124, 58, 237, 0.35);
 
   /* Layer Gradients - Dark Mode */
-  --hero-gradient: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  --hero-gradient: linear-gradient(to bottom, #000217, #050a51);
   --about-gradient: linear-gradient(to bottom, #060a2f, #040d4c);
   --work-gradient: linear-gradient(to bottom, #040d4c, #1f2182);
-  --skills-gradient: linear-gradient(180deg, #21134f 0%, #140a37 100%);
+  --skills-gradient: linear-gradient(to bottom, #1f2182, #6834C8);
   --contact-gradient: linear-gradient(180deg, #10052e 0%, #07021d 100%);
 
   --card-bg-gradient: linear-gradient(145deg, #291166, #18083f);
@@ -114,6 +114,7 @@
   --animate-float: float 6s ease-in-out infinite;
 
   @keyframes float {
+
     0%,
     100% {
       transform: translate3d(0, 0, 0);
@@ -127,6 +128,9 @@
 
 .animate-float {
   will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 @utility glass-panel {

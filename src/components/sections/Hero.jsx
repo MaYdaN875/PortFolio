@@ -1,6 +1,6 @@
 import SectionContainer from '../layout/SectionContainer'
-import { useTheme } from '../../context/ThemeContext'
-import { useLanguage } from '../../context/LanguageContext'
+import { useTheme } from '../../context/useTheme'
+import { useLanguage } from '../../context/useLanguage'
 import { useSectionScrollProgress } from '../../hooks/useSectionScrollProgress'
 import Reveal from '../common/Reveal'
 
@@ -97,13 +97,15 @@ export default function Hero() {
               </a>
               <a
                 className="button-primary px-6 py-2 rounded-full font-semibold shadow-lg"
-                href="#"
+                href="CurriculumV3.pdf"
+                download="CurriculumV3.pdf"
               >
                 {t.hero.cvSpanish}
               </a>
               <a
                 className="button-secondary px-6 py-2 rounded-full font-semibold shadow-lg"
-                href="#"
+                href="CurriculumV3.pdf"
+                download="CurriculumV3.pdf"
               >
                 {t.hero.cvEnglish}
               </a>
@@ -118,17 +120,19 @@ export default function Hero() {
             style={{ transform: 'translateY(calc((var(--scroll-progress, 0.5) - 0.5) * -120px))' }}
           >
             {theme === 'dark' && (
-              <div className="absolute inset-0 bg-purple-600/30 rounded-full blur-3xl"></div>
+              <div className="absolute inset-0 bg-purple-600/30 rounded-full blur-3xl pointer-events-none"></div>
             )}
-            <img
-              alt={
-                theme === 'dark'
-                  ? '3D cute cartoon astronaut sitting on a purple planet'
-                  : '3D cute airplane flying'
-              }
-              className="relative z-10 w-full h-full object-contain filter drop-shadow-2xl animate-float"
-              src={theme === 'dark' ? 'astronauta.png' : 'avioneta.png'}
-            />
+            <div className="relative z-10 w-full h-full animate-float [backface-visibility:hidden] [transform:translateZ(0)]">
+              <img
+                alt={
+                  theme === 'dark'
+                    ? '3D cute cartoon astronaut sitting on a purple planet'
+                    : '3D cute airplane flying'
+                }
+                className="w-full h-full object-contain filter drop-shadow-2xl [backface-visibility:hidden] [transform:translateZ(0)]"
+                src={theme === 'dark' ? 'astronauta.png' : 'avioneta.png'}
+              />
+            </div>
           </div>
         </Reveal>
       </div>

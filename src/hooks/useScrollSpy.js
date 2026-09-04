@@ -20,7 +20,7 @@ export function useScrollSpy(sectionIds = ['home', 'about', 'work', 'contact'], 
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
     return () => {
       window.removeEventListener('scroll', handleScroll)

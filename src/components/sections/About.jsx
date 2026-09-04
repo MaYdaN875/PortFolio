@@ -1,6 +1,6 @@
 import SectionContainer from '../layout/SectionContainer'
-import { useTheme } from '../../context/ThemeContext'
-import { useLanguage } from '../../context/LanguageContext'
+import { useTheme } from '../../context/useTheme'
+import { useLanguage } from '../../context/useLanguage'
 import { useSectionScrollProgress } from '../../hooks/useSectionScrollProgress'
 import Reveal from '../common/Reveal'
 
@@ -98,6 +98,8 @@ export default function About() {
               alt="Developer Workspace"
               className="w-full h-auto object-cover"
               src="foto.png"
+              loading="lazy"
+              decoding="async"
             />
           </Reveal>
         </div>

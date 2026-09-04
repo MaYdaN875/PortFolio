@@ -46,9 +46,9 @@
         "title": "Osseous",
         "description": "E-commerce platform featuring a shopping cart, online payments, and order tracking."
       },
-      "portfolio": {
-        "title": "Portfolio",
-        "description": "My personal portfolio, built with React and Tailwind CSS, showcasing my projects and skills as a developer."
+      "black-jack": {
+        "title": "black-jack",
+        "description": "My personal black-jack, built with React and Tailwind CSS, showcasing my projects and skills as a developer."
       },
       "gifexpertapp": {
         "title": "GifExpertApp",
@@ -62,7 +62,7 @@
   "contact": {
     "title": "Let's Connect!",
     "subtitle": "I'm always open to new opportunities, interesting projects, or just a friendly hello. Feel free to reach out!",
-    "emailLabel": "hello@maydan.dev",
+    "emailLabel": "danielleon0100@gmail.com",
     "locationLabel": "Somewhere on Earth 🌍",
     "button": "Send Me a Message"
   },

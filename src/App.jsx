@@ -7,15 +7,16 @@ import Hero from './components/sections/Hero'
 import About from './components/sections/About'
 import Work from './components/sections/Work'
 import Skills from './components/sections/Skills'
-import Contact from './components/sections/Contact'
 
 import { ThemeProvider } from './context/ThemeContext'
 import { LanguageProvider } from './context/LanguageContext'
 import { useScrollSpy } from './hooks/useScrollSpy'
 
+const SECTION_IDS = ['home', 'about', 'work', 'contact']
+
 function MainContent() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const activeSection = useScrollSpy(['home', 'about', 'work', 'contact'], 200)
+  const activeSection = useScrollSpy(SECTION_IDS, 200)
 
   const handleLinkClick = () => {
     setIsMobileMenuOpen(false)
@@ -44,7 +45,6 @@ function MainContent() {
         <About />
         <Work />
         <Skills />
-        <Contact />
       </main>
 
       {/* Footer Layout */}

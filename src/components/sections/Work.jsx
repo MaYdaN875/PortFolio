@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react'
 import SectionContainer from '../layout/SectionContainer'
 import ProjectCard from './Work/ProjectCard'
-import { useTheme } from '../../context/ThemeContext'
-import { useLanguage } from '../../context/LanguageContext'
+import { useTheme } from '../../context/useTheme'
+import { useLanguage } from '../../context/useLanguage'
 import { useSectionScrollProgress } from '../../hooks/useSectionScrollProgress'
 import Reveal from '../common/Reveal'
 
@@ -17,36 +17,50 @@ export default function Work() {
   useEffect(() => {
     if (theme !== 'dark') return
 
-    let x = 0
-    let y = 0
-    const ratio = 0.05
+    let targetX = 0
+    let targetY = 0
+    let currentX = 0
+    let currentY = 0
+    const ratio = 0.04
 
-    const handleMouseMove = (e) => {
-      x = e.pageX
-      y = e.pageY
-    }
+    let animationFrameId = null
 
-    document.addEventListener('mousemove', handleMouseMove)
-
-    let animationFrameId
     const animate = () => {
+      currentX += (targetX - currentX) * 0.08
+      currentY += (targetY - currentY) * 0.08
+
       if (starZ1Ref.current) {
-        starZ1Ref.current.style.transform = `translate(${x * ratio}px, ${y * ratio}px)`
+        starZ1Ref.current.style.transform = `translate3d(${currentX * ratio}px, ${currentY * ratio}px, 0)`
       }
       if (starZ2Ref.current) {
-        starZ2Ref.current.style.transform = `translate(${(x * ratio) / 2}px, ${(y * ratio) / 2}px) rotate(217deg)`
+        starZ2Ref.current.style.transform = `translate3d(${(currentX * ratio) / 2}px, ${(currentY * ratio) / 2}px, 0) rotate(217deg)`
       }
       if (starZ3Ref.current) {
-        starZ3Ref.current.style.transform = `translate(${(x * ratio) / 3}px, ${(y * ratio) / 3}px) rotate(71deg)`
+        starZ3Ref.current.style.transform = `translate3d(${(currentX * ratio) / 3}px, ${(currentY * ratio) / 3}px, 0) rotate(71deg)`
       }
-      animationFrameId = requestAnimationFrame(animate)
+      if (Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1) {
+        animationFrameId = requestAnimationFrame(animate)
+      } else {
+        animationFrameId = null
+      }
     }
 
+    const handleMouseMove = (e) => {
+      targetX = e.clientX - window.innerWidth / 2
+      targetY = e.clientY - window.innerHeight / 2
+      if (animationFrameId === null) {
+        animationFrameId = requestAnimationFrame(animate)
+      }
+    }
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
     animate()
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove)
-      cancelAnimationFrame(animationFrameId)
+      window.removeEventListener('mousemove', handleMouseMove)
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId)
+      }
     }
   }, [theme])
 
@@ -86,15 +100,15 @@ export default function Work() {
       target: '_blank',
     },
     {
-      id: 'portfolio',
-      title: t.work.projects.portfolio.title,
-      description: t.work.projects.portfolio.description,
-      imageSrc: 'portfolio.webp',
-      imageAlt: 'Portfolio',
-      tags: ['React', 'Tailwind CSS'],
+      id: 'black-jack',
+      title: t.work.projects['black-jack']?.title,
+      description: t.work.projects['black-jack']?.description,
+      imageSrc: 'blackjack.png',
+      imageAlt: 'Blackjack',
+      tags: ['JavaScript', 'Vite', 'CSS3'],
       link: '#',
-      githubLink: 'https://github.com/MaYdaN875/PortFolio',
-      target: '_self',
+      githubLink: 'https://github.com/MaYdaN875/BlackJack_Vite',
+      target: '_blank',
     },
     {
       id: 'gifexpertapp',
@@ -105,7 +119,7 @@ export default function Work() {
       tags: ['React', 'Tailwind CSS'],
       link: 'https://maydan875-gifexpertapp.netlify.app/',
       githubLink: 'https://github.com/MaYdaN875',
-      target: '_self',
+      target: '_blank',
     },
   ]
 
@@ -118,6 +132,14 @@ export default function Work() {
       className="work-section work-sticky-parent"
     >
       <div className="work-sticky-child">
+        {/* Decorative Projects Background */}
+        <div className="absolute top-0 left-0 z-[5] h-[745px] w-full overflow-hidden pointer-events-none">
+          <div
+            className="w-full h-full bg-no-repeat bg-top bg-cover"
+            style={{ backgroundImage: 'url(projects.png)' }}
+          />
+        </div>
+
         {/* Parallax Starry Sky Background */}
         {theme === 'dark' && (
           <div className="starry-sky-bg pointer-events-none">
@@ -221,13 +243,6 @@ export default function Work() {
         </div>
       </div>
 
-      {/* Projects Background Image Transition (Positioned at the Top) */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden h-[745px] pointer-events-none z-10">
-        <div
-          className="w-full h-full bg-no-repeat bg-top bg-cover"
-          style={{ backgroundImage: 'url(projects.png)' }}
-        />
-      </div>
     </SectionContainer>
   )
 }

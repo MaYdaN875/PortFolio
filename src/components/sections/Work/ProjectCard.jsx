@@ -23,6 +23,8 @@ export default function ProjectCard({
           alt={imageAlt || title}
           className="w-full h-48 object-cover border-b border-[var(--card-border-color)] opacity-90 group-hover:opacity-100 transition-opacity"
           src={imageSrc}
+          loading="lazy"
+          decoding="async"
         />
 
         <div className="p-6 pb-2">

@@ -1,22 +1,12 @@
-import SectionContainer from '../layout/SectionContainer'
-import { useLanguage } from '../../context/LanguageContext'
+import { useLanguage } from '../../context/useLanguage'
 import Reveal from '../common/Reveal'
 
 export default function Contact() {
   const { t } = useLanguage()
 
   return (
-    <SectionContainer id="contact" className="contact-section py-32 overflow-hidden">
-      {/* Landscape Background Illustration */}
-      <div className="absolute inset-0 z-0">
-        <img
-          alt="Sunset Landscape"
-          className="w-full h-full object-cover object-bottom opacity-70 mix-blend-luminosity"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJynEpQOrggzJMw8qnTS_JxLyTb7suPPQWqqy5EXoGGrNM68fuSRnBxNFVhKLHHguusF5PVtf84MkfR4rUWJZfgdlrjWuny2da5LhWmtaX809T-jKskCLRWzSsH3vLPRz9A8RX3OfKR6WbFhuAv3i3afglSoMvTz3fxAsxzPlvU3Af30DWASwsWaU6RfkMrZfJ10PPjRKbVnzWP4fQ5WsiND1AqVX2Z8IkVri0fm6qAmJPtXX1natN"
-        />
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10 text-center">
+    <section id="contact" className="relative z-20 mt-20 text-center md:mt-24 md:-mb-80">
+      <div className="container mx-auto px-6">
         <Reveal variant="fade-up">
           <h2 className="text-5xl font-bold font-heading text-[var(--heading-color)] mb-6">
             {t.contact.title}
@@ -53,9 +43,6 @@ export default function Contact() {
         </a>
         </Reveal>
       </div>
-
-      {/* Gradient Overlay at bottom for footer transition */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[var(--footer-bg)] to-transparent z-10"></div>
-    </SectionContainer>
+    </section>
   )
 }

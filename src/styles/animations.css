@@ -49,6 +49,17 @@
   transform: scale3d(1, 1, 1);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Projects Sticky Horizontal Scroll Parallax */
 .work-horizontal-track {
   display: grid;

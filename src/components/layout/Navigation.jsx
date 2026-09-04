@@ -1,4 +1,4 @@
-import { useLanguage } from '../../context/LanguageContext'
+import { useLanguage } from '../../context/useLanguage'
 import { NAV_ITEMS } from '../../constants/navigation'
 
 export default function Navigation({ activeSection, className = 'hidden md:flex gap-8', onLinkClick }) {
