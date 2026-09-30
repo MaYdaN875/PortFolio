@@ -33,6 +33,9 @@ function MainContent() {
       showConfirmButton: false,
       timer: 3000,
       timerProgressBar: true,
+      customClass: {
+        container: 'theme-notice-container',
+      },
     })
   }
 

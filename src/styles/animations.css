@@ -78,6 +78,10 @@
 .project-contributions li { align-items: center; display: flex; gap: 0.65rem; }
 .project-contributions i { color: var(--color-primary-soft); }
 
+.theme-notice-container {
+  padding-top: 5.5rem !important;
+}
+
 @media (min-width: 768px) {
   .project-showcase-grid { grid-template-columns: minmax(15rem, 0.42fr) minmax(0, 1fr); gap: 2rem; }
   .project-selector { align-content: start; }
