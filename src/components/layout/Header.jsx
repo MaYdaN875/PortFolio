@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
 import Navigation from './Navigation'
-import { useTheme } from '../../context/useTheme'
 import { useLanguage } from '../../context/useLanguage'
 
-function Header({ activeSection, onMenuOpen, onLinkClick }) {
+function Header({ activeSection, onMenuOpen, onLinkClick, onThemeNotice }) {
   const [isScrolled, setIsScrolled] = useState(false)
-  const { theme, toggleTheme } = useTheme()
   const { language, toggleLanguage } = useLanguage()
 
   useEffect(() => {
@@ -55,14 +53,13 @@ function Header({ activeSection, onMenuOpen, onLinkClick }) {
           <i className="fa-solid fa-globe text-xs"></i>
         </button>
 
-        {/* Theme toggle */}
         <button
-          onClick={toggleTheme}
+          onClick={onThemeNotice}
           className="text-[var(--color-text)] hover:text-[var(--color-primary-soft)] transition-colors p-1 flex items-center justify-center cursor-pointer"
-          aria-label="Alternar tema"
-          title={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+          aria-label="Cambio de tema bajo construcción"
+          title="Bajo construcción"
         >
-          <i className={`fa-solid ${theme === 'dark' ? 'fa-sun text-yellow-300 text-xl' : 'fa-moon text-indigo-600 text-xl'}`}></i>
+          <i className="fa-solid fa-sun text-yellow-300 text-xl" aria-hidden="true" />
         </button>
 
         {/* Hamburger Menu Toggle (Mobile) */}

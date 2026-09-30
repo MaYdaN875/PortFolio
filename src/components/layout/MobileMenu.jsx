@@ -1,9 +1,7 @@
 import { NAV_ITEMS } from '../../constants/navigation'
-import { useTheme } from '../../context/useTheme'
 import { useLanguage } from '../../context/useLanguage'
 
-function MobileMenu({ isOpen, onClose, activeSection, onLinkClick }) {
-  const { theme, toggleTheme } = useTheme()
+function MobileMenu({ isOpen, onClose, activeSection, onLinkClick, onThemeNotice }) {
   const { language, toggleLanguage, t } = useLanguage()
 
   return (
@@ -81,16 +79,12 @@ function MobileMenu({ isOpen, onClose, activeSection, onLinkClick }) {
           <div className="flex items-center justify-between text-[var(--color-text-secondary)] text-sm">
             <span>{language === 'es' ? 'Tema' : 'Theme'}</span>
             <button
-              onClick={toggleTheme}
+              onClick={onThemeNotice}
               className="text-[var(--color-text)] hover:text-[var(--color-primary)] p-1 flex items-center gap-2 cursor-pointer"
-              aria-label="Alternar tema"
+              aria-label="Cambio de tema bajo construcción"
+              title="Bajo construcción"
             >
-              <i className={`fa-solid ${theme === 'dark' ? 'fa-sun text-yellow-300 text-lg' : 'fa-moon text-indigo-600 text-lg'}`}></i>
-              <span className="text-xs font-semibold">
-                {theme === 'dark'
-                  ? (language === 'es' ? 'Oscuro' : 'Dark')
-                  : (language === 'es' ? 'Claro' : 'Light')}
-              </span>
+              <i className="fa-solid fa-sun text-yellow-300 text-lg" aria-hidden="true" />
             </button>
           </div>
         </div>

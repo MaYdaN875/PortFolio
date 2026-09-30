@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from './components/layout/Header'
 import MobileMenu from './components/layout/MobileMenu'
 import Footer from './components/layout/Footer'
+import Swal from 'sweetalert2'
 
 import Hero from './components/sections/Hero'
 import About from './components/sections/About'
@@ -22,6 +23,19 @@ function MainContent() {
     setIsMobileMenuOpen(false)
   }
 
+  const showThemeNotice = () => {
+    Swal.fire({
+      toast: true,
+      position: 'top-end',
+      icon: 'info',
+      title: 'Bajo construcción',
+      text: 'El modo claro estará disponible próximamente.',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+    })
+  }
+
   return (
     <div className="font-sans antialiased overflow-x-clip bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-500 relative">
       {/* Header Layout */}
@@ -29,6 +43,7 @@ function MainContent() {
         activeSection={activeSection}
         onMenuOpen={() => setIsMobileMenuOpen(true)}
         onLinkClick={handleLinkClick}
+        onThemeNotice={showThemeNotice}
       />
 
       {/* Mobile Drawer Menu */}
@@ -37,6 +52,7 @@ function MainContent() {
         onClose={() => setIsMobileMenuOpen(false)}
         activeSection={activeSection}
         onLinkClick={handleLinkClick}
+        onThemeNotice={showThemeNotice}
       />
 
       {/* Page Sections */}
