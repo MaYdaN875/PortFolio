@@ -7,7 +7,7 @@ export function ThemeProvider({ children }) {
     if (savedTheme) {
       return savedTheme
     }
-    // Default to dark theme for space-themed black-jack
+    // Default to dark theme for the space-themed portfolio
     return 'dark'
   })
 

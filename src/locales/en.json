@@ -27,32 +27,39 @@
   },
   "work": {
     "title": "Work",
-    "viewProject": "View Project",
+    "eyebrow": "Interfaces in action",
+    "intro": "Select a project to explore the interface decisions, components, and experiences I built.",
+    "selectorLabel": "Select a project",
+    "liveDemo": "Live demo",
     "seeMore": {
       "title": "Want to see more?",
       "subtitle": "Explore all of my projects and creations",
       "button": "See All Works"
     },
     "projects": {
-      "taskflow": {
+      "godart": {
         "title": "GodArt",
-        "description": "E-commerce platform for a stationery store, featuring a product catalog, variations, shopping cart, online payments, and order management. It includes an administrative panel for managing products, inventory, promotions, customers, carousels, and store content."
+        "category": "E-commerce",
+        "description": "E-commerce platform for a stationery shop with catalog, product variations, cart, payments, and a complete admin dashboard.",
+        "contributions": ["Responsive catalog and purchasing UI", "Product browsing and filtering", "Clear shopping cart and checkout flow", "Reusable interface components", "REST API integration"]
       },
-      "posElectron": {
+      "pos": {
         "title": "POS electron",
-        "description": "A comprehensive, high-performance Point of Sale (POS) system designed specifically for stationery stores and retail businesses. Its built on a hybrid architecture that combines a native desktop interface using Electron with a lightweight PHP backend API and MySQL."
+        "category": "POS system",
+        "description": "Desktop Point of Sale system for stationery shops and retailers, built with Electron and a lightweight API.",
+        "contributions": ["Complex desktop application UI", "Product and inventory management", "Optimized sales flow", "Barcode scanner-ready design", "Reusable components"]
       },
-      "Osseous": {
+      "osseous": {
         "title": "Osseous",
-        "description": "E-commerce platform featuring a shopping cart, online payments, and order tracking."
+        "category": "E-commerce",
+        "description": "E-commerce platform featuring cart, payments, and order tracking.",
+        "contributions": ["Conversion-focused shopping experience", "Reusable catalog components", "Cart and order tracking", "Mobile-adapted views", "Consistent interface states"]
       },
-      "black-jack": {
-        "title": "black-jack",
-        "description": "My personal black-jack, built with React and Tailwind CSS, showcasing my projects and skills as a developer."
-      },
-      "gifexpertapp": {
-        "title": "GifExpertApp",
-        "description": "A web application that allows users to search and view animated GIFs using the Giphy API. Users can enter search terms and explore a wide variety of GIFs related to their interests."
+      "blackjack": {
+        "title": "Blackjack",
+        "category": "Web game",
+        "description": "Blackjack game built to practice an interactive interface and clearly communicated game states.",
+        "contributions": ["Action-oriented game UI", "Easy-to-read visual states", "Immediate play feedback", "Responsive design", "Lightweight Vite architecture"]
       }
     }
   },

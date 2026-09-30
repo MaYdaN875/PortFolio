@@ -27,32 +27,39 @@
   },
   "work": {
     "title": "Proyectos",
-    "viewProject": "Ver Proyecto",
+    "eyebrow": "Interfaces en acción",
+    "intro": "Selecciona un proyecto para explorar las decisiones de interfaz, los componentes y las experiencias que construí.",
+    "selectorLabel": "Seleccionar proyecto",
+    "liveDemo": "Demo en vivo",
     "seeMore": {
       "title": "¿Quieres ver más?",
       "subtitle": "Explora todos mis proyectos y creaciones",
       "button": "Ver todos los proyectos"
     },
     "projects": {
-      "taskflow": {
+      "godart": {
         "title": "GodArt",
-        "description": "Plataforma de comercio electrónico para una papelería, con catálogo de productos, variantes, carrito de compras, pagos en línea y gestión de pedidos. Incluye un panel administrativo para controlar productos, inventario, promociones, clientes, carruseles y contenido de la tienda."
+        "category": "E-commerce",
+        "description": "Plataforma de comercio electrónico para una papelería con catálogo, variantes, carrito, pagos y un panel administrativo completo.",
+        "contributions": ["Interfaz responsive para catálogo y compra", "Filtrado y exploración de productos", "Carrito y flujo de compra claro", "Componentes reutilizables", "Integración con API REST"]
       },
-      "posElectron": {
+      "pos": {
         "title": "POS electron",
-        "description": "Sistema de Punto de Venta (POS) integral y de alto rendimiento, diseñado específicamente para papelerías y comercios minoristas. Está construido bajo un esquema híbrido que combina una interfaz de escritorio nativa mediante Electron y una API backend ligera en PHP con MySQL."
+        "category": "Sistema POS",
+        "description": "Sistema de Punto de Venta de escritorio orientado a papelerías y comercios minoristas, construido con Electron y una API ligera.",
+        "contributions": ["UI de aplicación de escritorio compleja", "Gestión de productos e inventario", "Flujo de venta optimizado", "Diseño preparado para lector de código de barras", "Componentes reutilizables"]
       },
-      "Osseous": {
+      "osseous": {
         "title": "Osseous",
-        "description": "Plataforma de comercio electrónico con carrito de compras, pagos y seguimiento de pedidos."
+        "category": "E-commerce",
+        "description": "Plataforma de comercio electrónico con carrito, pagos y seguimiento de pedidos.",
+        "contributions": ["Experiencia de compra enfocada en conversión", "Componentes de catálogo reutilizables", "Carrito y seguimiento de pedido", "Vistas adaptadas a móvil", "Estados de interfaz consistentes"]
       },
-      "black-jack": {
-        "title": "black-jack",
-        "description": "Mi black-jack personal, construido con React y Tailwind CSS, que muestra mis proyectos y habilidades como desarrollador."
-      },
-      "gifexpertapp": {
-        "title": "GifExpertApp",
-        "description": "Aplicación web que permite buscar y visualizar GIFs animados utilizando la API de Giphy. Los usuarios pueden ingresar términos de búsqueda y explorar una amplia variedad de GIFs relacionados con sus intereses."
+      "blackjack": {
+        "title": "Blackjack",
+        "category": "Juego web",
+        "description": "Juego de Blackjack desarrollado para practicar una interfaz interactiva y estados de juego claros.",
+        "contributions": ["Interfaz de juego orientada a acciones", "Estados visuales fáciles de leer", "Feedback inmediato de jugadas", "Diseño responsive", "Arquitectura ligera con Vite"]
       }
     }
   },
