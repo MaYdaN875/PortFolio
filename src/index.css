@@ -80,7 +80,7 @@
   --glow-primary: 0 0 28px rgba(124, 58, 237, 0.35);
 
   /* Layer Gradients - Dark Mode */
-  --hero-gradient: linear-gradient(to bottom, #000217, #050a51);
+  --hero-gradient: linear-gradient(to bottom, #000217, #060a2f);
   --about-gradient: linear-gradient(to bottom, #060a2f, #040d4c);
   --work-gradient: linear-gradient(to bottom, #040d4c, #1f2182);
   --skills-gradient: linear-gradient(to bottom, #1f2182, #6834C8);
@@ -101,8 +101,8 @@
 }
 
 @theme {
-  --font-sans: "Nunito", sans-serif;
-  --font-heading: "Comic Neue", cursive;
+  --font-sans: "Roboto", sans-serif;
+  --font-heading: "Anton", sans-serif;
 
   --color-space-dark: var(--color-bg);
   --color-space-purple: var(--color-bg-secondary);
@@ -144,6 +144,67 @@
   background: var(--hero-gradient);
   color: var(--color-text);
   transition: background 0.5s ease, color 0.5s ease;
+}
+
+.hero-layout {
+  min-height: 100svh;
+}
+
+.hero-display-title {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-heading);
+  font-size: 80px;
+
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.hero-social-link {
+  color: var(--color-text);
+  font-size: 1.8rem;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.hero-social-link:hover {
+  color: var(--color-primary-soft);
+  transform: translateY(-2px);
+}
+
+.hero-stats {
+  display: grid;
+  gap: 1.75rem;
+  text-align: center;
+}
+
+.hero-stat {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.hero-stat strong {
+  color: var(--color-primary-soft);
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.hero-stat span {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+  .hero-stats {
+    border-left: 1px solid var(--color-divider);
+    padding-left: 2.5rem;
+    text-align: right;
+  }
 }
 
 .about-section {

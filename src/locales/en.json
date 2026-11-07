@@ -6,9 +6,9 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "Hi, I'm Angel",
-    "role": "Full-Stack Developer",
-    "tagline": "The greatest programs starts with a small line code",
+    "roleSecondary": "FULL-STACK",
+    "role": "DEVELOPER",
+    "tagline": "Hi! I'm Angel. A frontend-focused Full-Stack Developer with 2+ years of experience in building high-performance, scalable, and responsive web solutions",
     "cvSpanish": "CV - Spanish",
     "cvEnglish": "CV - English"
   },
@@ -17,12 +17,12 @@
     "text1": "I'm a passionate Full-Stack Developer who enjoys building modern, user-friendly web applications. I love turning ideas into real products and constantly learning new technologies to create better experiences.",
     "text2": "When I'm not coding, you'll find me exploring space (virtually), listening to music, or sketching ideas for my next project.",
     "stats": {
-      "experience": "Experience",
-      "expValue": "2+ Years",
-      "projects": "Projects",
-      "projValue": "10+ Completed",
+      "experience": "Years of Experience",
+      "expValue": "2+",
+      "projects": "Completed Projects",
+      "projValue": "10+",
       "focus": "Focus",
-      "focusValue": "Clean Code & Great UX"
+      "focusValue": "UX / UI"
     }
   },
   "work": {
@@ -41,25 +41,49 @@
         "title": "GodArt",
         "category": "E-commerce",
         "description": "E-commerce platform for a stationery shop with catalog, product variations, cart, payments, and a complete admin dashboard.",
-        "contributions": ["Responsive catalog and purchasing UI", "Product browsing and filtering", "Clear shopping cart and checkout flow", "Reusable interface components", "REST API integration"]
+        "contributions": [
+          "Responsive catalog and purchasing UI",
+          "Product browsing and filtering",
+          "Clear shopping cart and checkout flow",
+          "Reusable interface components",
+          "REST API integration"
+        ]
       },
       "pos": {
         "title": "POS electron",
         "category": "POS system",
         "description": "Desktop Point of Sale system for stationery shops and retailers, built with Electron and a lightweight API.",
-        "contributions": ["Complex desktop application UI", "Product and inventory management", "Optimized sales flow", "Barcode scanner-ready design", "Reusable components"]
+        "contributions": [
+          "Complex desktop application UI",
+          "Product and inventory management",
+          "Optimized sales flow",
+          "Barcode scanner-ready design",
+          "Reusable components"
+        ]
       },
       "osseous": {
         "title": "Osseous",
         "category": "E-commerce",
         "description": "E-commerce platform featuring cart, payments, and order tracking.",
-        "contributions": ["Conversion-focused shopping experience", "Reusable catalog components", "Cart and order tracking", "Mobile-adapted views", "Consistent interface states"]
+        "contributions": [
+          "Conversion-focused shopping experience",
+          "Reusable catalog components",
+          "Cart and order tracking",
+          "Mobile-adapted views",
+          "Consistent interface states"
+        ]
       },
       "blackjack": {
         "title": "Blackjack",
         "category": "Web game",
         "description": "Blackjack game built to practice an interactive interface and clearly communicated game states.",
-        "contributions": ["Action-oriented game UI", "Easy-to-read visual states", "Immediate play feedback", "Responsive design", "Lightweight Vite architecture"]
+        "contributions": [
+          "Action-oriented game UI",
+          "Easy-to-read visual states",
+          "Immediate play feedback",
+          "Responsive design",
+          "Lightweight Vite architecture"
+        ]
       }
     }
   },

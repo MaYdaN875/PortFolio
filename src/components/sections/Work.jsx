@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useState } from 'react'
 import SectionContainer from '../layout/SectionContainer'
 import { useTheme } from '../../context/useTheme'
 import { useLanguage } from '../../context/useLanguage'
 import Reveal from '../common/Reveal'
+import ParallaxStarField from '../common/ParallaxStarField'
 
 const PROJECTS = [
   { id: 'godart', imageSrc: 'logo.webp', imageAlt: 'Interfaz de GodArt', technologies: ['React', 'PHP', 'MySQL'], liveUrl: 'https://godart-papelería.com/', githubUrl: 'https://github.com/MaYdaN875' },
@@ -15,52 +16,13 @@ export default function Work() {
   const { t } = useLanguage()
   const { theme } = useTheme()
   const [selectedId, setSelectedId] = useState(PROJECTS[0].id)
-  const starZ1Ref = useRef(null)
-  const starZ2Ref = useRef(null)
-  const starZ3Ref = useRef(null)
   const selectedProject = useMemo(() => PROJECTS.find((project) => project.id === selectedId) ?? PROJECTS[0], [selectedId])
   const selectedContent = t.work.projects[selectedProject.id]
-
-  useEffect(() => {
-    if (theme !== 'dark') return
-
-    const layers = [[starZ1Ref, 1, 0], [starZ2Ref, 0.5, 217], [starZ3Ref, 1 / 3, 71]]
-    let targetX = 0
-    let targetY = 0
-    let currentX = 0
-    let currentY = 0
-    let animationFrameId = null
-
-    const animate = () => {
-      currentX += (targetX - currentX) * 0.08
-      currentY += (targetY - currentY) * 0.08
-      layers.forEach(([ref, multiplier, rotation]) => {
-        if (ref.current) ref.current.style.transform = `translate3d(${currentX * 0.04 * multiplier}px, ${currentY * 0.04 * multiplier}px, 0) rotate(${rotation}deg)`
-      })
-      animationFrameId = Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1 ? requestAnimationFrame(animate) : null
-    }
-
-    const handleMouseMove = (event) => {
-      targetX = event.clientX - window.innerWidth / 2
-      targetY = event.clientY - window.innerHeight / 2
-      if (animationFrameId === null) animationFrameId = requestAnimationFrame(animate)
-    }
-
-    window.addEventListener('mousemove', handleMouseMove, { passive: true })
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-      if (animationFrameId !== null) cancelAnimationFrame(animationFrameId)
-    }
-  }, [theme])
 
   return (
     <SectionContainer id="work" className="work-section overflow-hidden py-24 md:py-32">
       <div className="absolute inset-x-0 top-0 z-[5] h-[745px] pointer-events-none"><div className="h-full w-full bg-cover bg-top bg-no-repeat" style={{ backgroundImage: 'url(projects.png)' }} /></div>
-      {theme === 'dark' && <div className="starry-sky-bg pointer-events-none">
-        <div ref={starZ3Ref} className="star-z-3"><div className="tile top-left animate-opacity freq-5" /><div className="tile top-right animate-opacity freq-9" /><div className="tile bottom-left animate-opacity freq-7" /><div className="tile bottom-right animate-opacity freq-10" /></div>
-        <div ref={starZ2Ref} className="star-z-2"><div className="tile top-left animate-opacity freq-9 delay-2" /><div className="tile top-right animate-opacity freq-5 delay-2" /><div className="tile bottom-left animate-opacity freq-6 delay-4" /><div className="tile bottom-right animate-opacity freq-10 delay-4" /></div>
-        <div ref={starZ1Ref} className="star-z-1"><div className="tile top-left animate-opacity freq-7 delay-2" /><div className="tile top-right animate-opacity freq-5 delay-4" /><div className="tile bottom-left animate-opacity freq-9 delay-2" /><div className="tile bottom-right animate-opacity freq-5 delay" /></div>
-      </div>}
+      {theme === 'dark' && <ParallaxStarField />}
 
       <div className="container relative z-10 mx-auto px-6">
         <Reveal variant="fade-down" className="mb-12 text-center">

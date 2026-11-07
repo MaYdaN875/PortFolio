@@ -30,9 +30,7 @@ function Header({ activeSection, onMenuOpen, onLinkClick, onThemeNotice }) {
         <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-sm">
           <img src="iconMaydan.png" alt="" />
         </div>
-        <span className="font-heading text-2xl font-bold text-[var(--heading-color)] tracking-wide">
-          MaYdaN
-        </span>
+
       </div>
 
       {/* Desktop Navigation */}

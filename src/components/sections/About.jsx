@@ -3,6 +3,7 @@ import { useTheme } from '../../context/useTheme'
 import { useLanguage } from '../../context/useLanguage'
 import { useSectionScrollProgress } from '../../hooks/useSectionScrollProgress'
 import Reveal from '../common/Reveal'
+import ParallaxStarField from '../common/ParallaxStarField'
 
 export default function About() {
   const { t } = useLanguage()
@@ -15,13 +16,7 @@ export default function About() {
       ref={sectionRef}
       className="about-section py-20 overflow-hidden"
     >
-      {theme === 'dark' && (
-        <div className="galaxy pointer-events-none">
-          <div className="stars1"></div>
-          <div className="stars2"></div>
-          <div className="stars3"></div>
-        </div>
-      )}
+      {theme === 'dark' && <ParallaxStarField />}
 
       <div className="container mx-auto px-6 relative z-10">
         <Reveal variant="fade-down" className="text-center mb-16 flex justify-center">
@@ -41,50 +36,6 @@ export default function About() {
               <p>{t.about.text2}</p>
             </Reveal>
 
-            {/* Stat Cards */}
-            <Reveal variant="fade-up" delay={200} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="stat-card rounded-2xl p-6 flex flex-col items-center text-center gap-4 shadow-lg hover:shadow-xl transition-all cursor-default group">
-                <div className="w-12 h-12 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center text-xl group-hover:scale-110 transition-transform shadow-md">
-                  <i className="fa-solid fa-rocket"></i>
-                </div>
-                <div>
-                  <h4 className="font-bold text-[var(--heading-color)]">
-                    {t.about.stats.experience}
-                  </h4>
-                  <p className="text-sm text-[var(--color-text-secondary)]">
-                    {t.about.stats.expValue}
-                  </p>
-                </div>
-              </div>
-
-              <div className="stat-card rounded-2xl p-6 flex flex-col items-center text-center gap-4 shadow-lg hover:shadow-xl transition-all cursor-default group">
-                <div className="w-12 h-12 rounded-full bg-[var(--color-primary-soft)] text-white flex items-center justify-center text-xl group-hover:scale-110 transition-transform shadow-md">
-                  <i className="fa-solid fa-code"></i>
-                </div>
-                <div>
-                  <h4 className="font-bold text-[var(--heading-color)]">
-                    {t.about.stats.projects}
-                  </h4>
-                  <p className="text-sm text-[var(--color-text-secondary)]">
-                    {t.about.stats.projValue}
-                  </p>
-                </div>
-              </div>
-
-              <div className="stat-card rounded-2xl p-6 flex flex-col items-center text-center gap-4 shadow-lg hover:shadow-xl transition-all cursor-default group">
-                <div className="w-12 h-12 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center text-xl group-hover:scale-110 transition-transform shadow-md">
-                  <i className="fa-solid fa-heart"></i>
-                </div>
-                <div>
-                  <h4 className="font-bold text-[var(--heading-color)]">
-                    {t.about.stats.focus}
-                  </h4>
-                  <p className="text-sm text-[var(--color-text-secondary)]">
-                    {t.about.stats.focusValue}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
           </div>
 
           <Reveal variant="zoom-in" delay={150} className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-[var(--color-border)]">

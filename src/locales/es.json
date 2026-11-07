@@ -6,9 +6,9 @@
     "contact": "Contacto"
   },
   "hero": {
-    "greeting": "Hola, soy Angel",
-    "role": "Desarrollador Full-Stack",
-    "tagline": "Los mejores programas comienzan con una pequeña línea de código",
+    "roleSecondary": "DESARROLLADOR",
+    "role": "FULL-STACK",
+    "tagline": "¡Hola! Soy Angel. Desarrollador Full-Stack con enfoque en frontend y más de 2 años de experiencia en la creación de soluciones web de alto rendimiento, escalables y responsivas.",
     "cvSpanish": "CV - Español",
     "cvEnglish": "CV - Inglés"
   },
@@ -17,12 +17,12 @@
     "text1": "Soy un apasionado Desarrollador Full-Stack al que le encanta crear aplicaciones web modernas y fáciles de usar. Me apasiona convertir ideas en productos reales y aprender constantemente nuevas tecnologías para brindar mejores experiencias.",
     "text2": "Cuando no estoy programando, me encontrarás explorando el espacio (virtualmente), escuchando música o dibujando ideas para mi próximo proyecto.",
     "stats": {
-      "experience": "Experiencia",
-      "expValue": "2+ Años",
-      "projects": "Proyectos",
-      "projValue": "10+ Completados",
+      "experience": "Años de experiencia",
+      "expValue": "2+",
+      "projects": "Proyectos Completados",
+      "projValue": "10+",
       "focus": "Enfoque",
-      "focusValue": "Código Limpio y Excelente UX"
+      "focusValue": "UX / UI"
     }
   },
   "work": {
@@ -41,25 +41,49 @@
         "title": "GodArt",
         "category": "E-commerce",
         "description": "Plataforma de comercio electrónico para una papelería con catálogo, variantes, carrito, pagos y un panel administrativo completo.",
-        "contributions": ["Interfaz responsive para catálogo y compra", "Filtrado y exploración de productos", "Carrito y flujo de compra claro", "Componentes reutilizables", "Integración con API REST"]
+        "contributions": [
+          "Interfaz responsive para catálogo y compra",
+          "Filtrado y exploración de productos",
+          "Carrito y flujo de compra claro",
+          "Componentes reutilizables",
+          "Integración con API REST"
+        ]
       },
       "pos": {
         "title": "POS electron",
         "category": "Sistema POS",
         "description": "Sistema de Punto de Venta de escritorio orientado a papelerías y comercios minoristas, construido con Electron y una API ligera.",
-        "contributions": ["UI de aplicación de escritorio compleja", "Gestión de productos e inventario", "Flujo de venta optimizado", "Diseño preparado para lector de código de barras", "Componentes reutilizables"]
+        "contributions": [
+          "UI de aplicación de escritorio compleja",
+          "Gestión de productos e inventario",
+          "Flujo de venta optimizado",
+          "Diseño preparado para lector de código de barras",
+          "Componentes reutilizables"
+        ]
       },
       "osseous": {
         "title": "Osseous",
         "category": "E-commerce",
         "description": "Plataforma de comercio electrónico con carrito, pagos y seguimiento de pedidos.",
-        "contributions": ["Experiencia de compra enfocada en conversión", "Componentes de catálogo reutilizables", "Carrito y seguimiento de pedido", "Vistas adaptadas a móvil", "Estados de interfaz consistentes"]
+        "contributions": [
+          "Experiencia de compra enfocada en conversión",
+          "Componentes de catálogo reutilizables",
+          "Carrito y seguimiento de pedido",
+          "Vistas adaptadas a móvil",
+          "Estados de interfaz consistentes"
+        ]
       },
       "blackjack": {
         "title": "Blackjack",
         "category": "Juego web",
         "description": "Juego de Blackjack desarrollado para practicar una interfaz interactiva y estados de juego claros.",
-        "contributions": ["Interfaz de juego orientada a acciones", "Estados visuales fáciles de leer", "Feedback inmediato de jugadas", "Diseño responsive", "Arquitectura ligera con Vite"]
+        "contributions": [
+          "Interfaz de juego orientada a acciones",
+          "Estados visuales fáciles de leer",
+          "Feedback inmediato de jugadas",
+          "Diseño responsive",
+          "Arquitectura ligera con Vite"
+        ]
       }
     }
   },
