@@ -17,10 +17,10 @@ export default function Hero() {
   ]
 
   return (
-    <SectionContainer id="home" ref={sectionRef} className="hero-section hero-layout flex overflow-hidden pt-28 pb-10 md:py-32">
+    <SectionContainer id="home" ref={sectionRef} className="hero-section hero-layout flex overflow-hidden pt-12  md:pt-42">
       {theme === 'dark' && <ParallaxStarField />}
 
-      <div className="w-full relative min-h-screen py-30 md:py-50 flex flex-col items-end justify-between">
+      <div className="w-full relative min-h-screen py-25 md:py-50 flex flex-col items-end justify-between">
         <div className="container relative z-10 mx-auto grid w-full items-center gap-12 md:pt-24 px-6 lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-20 ">
           <div className="max-w-136 text-left">
             <Reveal variant="fade-up">
@@ -60,10 +60,10 @@ export default function Hero() {
             text-center md:text-right
       text-3xl
       gap-4 md:gap-8
-      mt-8 md:mt-0
+      
       md:absolute
-      md:bottom-8
-      md:right-[5%]">
+      md:bottom-[4%]
+      md:right-[4%]">
           {stats.map((stat) => (
             <div key={stat.label} className="hero-stat text-4xl md:text-[3rem]">
               <strong className="mb-1.5">{stat.value}</strong>
