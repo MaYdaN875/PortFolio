@@ -65,11 +65,10 @@
       "osseous": {
         "title": "Osseous",
         "category": "E-commerce",
-        "description": "E-commerce platform featuring cart, payments, and order tracking.",
+        "description": "Medical website featuring a catalog of medical instruments and bone prostheses, with a focus on user experience.",
         "contributions": [
           "Conversion-focused shopping experience",
           "Reusable catalog components",
-          "Cart and order tracking",
           "Mobile-adapted views",
           "Consistent interface states"
         ]

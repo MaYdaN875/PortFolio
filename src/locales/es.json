@@ -65,11 +65,10 @@
       "osseous": {
         "title": "Osseous",
         "category": "E-commerce",
-        "description": "Plataforma de comercio electrónico con carrito, pagos y seguimiento de pedidos.",
+        "description": "Sitio web médico que incluye un catálogo de instrumental médico y prótesis óseas, con un enfoque en la experiencia del usuario.",
         "contributions": [
           "Experiencia de compra enfocada en conversión",
           "Componentes de catálogo reutilizables",
-          "Carrito y seguimiento de pedido",
           "Vistas adaptadas a móvil",
           "Estados de interfaz consistentes"
         ]
