@@ -6,17 +6,42 @@ import { useTheme } from '../../context/useTheme'
 import Reveal from '../common/Reveal'
 import Contact from './Contact'
 
-const SKILLS_DATA = [
-  { name: 'HTML5', iconClass: 'fa-brands fa-html5', colorClass: 'text-orange-500' },
-  { name: 'CSS3', iconClass: 'fa-brands fa-css3-alt', colorClass: 'text-blue-500' },
-  { name: 'JavaScript', iconClass: 'fa-brands fa-js', colorClass: 'text-yellow-400' },
-  { name: 'TypeScript', colorClass: 'text-blue-600 font-bold font-mono', customLabel: 'TS' },
-  { name: 'React', iconClass: 'fa-brands fa-react', colorClass: 'text-cyan-400' },
-  { name: 'Next.js', iconClass: 'fa-brands fa-neos', colorClass: 'text-[var(--color-text)]' },
-  { name: 'Node.js', iconClass: 'fa-brands fa-node-js', colorClass: 'text-green-500' },
-  { name: 'MongoDB', iconClass: 'fa-solid fa-leaf', colorClass: 'text-green-600' },
-  { name: 'Tailwind CSS', iconClass: 'fa-solid fa-wind', colorClass: 'text-cyan-500' },
-  { name: 'Git', iconClass: 'fa-brands fa-git-alt', colorClass: 'text-orange-600' },
+const SKILL_CATEGORIES = [
+  {
+    name: 'Frontend',
+    skills: [
+      { name: 'JavaScript', iconClass: 'fa-brands fa-js', colorClass: 'text-yellow-400' },
+      { name: 'TypeScript', colorClass: 'text-blue-500 font-bold font-mono', customLabel: 'TS' },
+      { name: 'React', iconClass: 'fa-brands fa-react', colorClass: 'text-cyan-400' },
+      { name: 'Redux', colorClass: 'text-violet-400 font-bold', customLabel: 'R' },
+      { name: 'Tailwind CSS', iconClass: 'fa-solid fa-wind', colorClass: 'text-cyan-400' },
+    ],
+  },
+  {
+    name: 'Backend',
+    skills: [
+      { name: 'Node.js', iconClass: 'fa-brands fa-node-js', colorClass: 'text-green-500' },
+      { name: 'Java', iconClass: 'fa-brands fa-java', colorClass: 'text-orange-400' },
+      { name: 'Spring Boot', iconClass: 'fa-solid fa-leaf', colorClass: 'text-green-400' },
+    ],
+  },
+  {
+    name: 'Database',
+    skills: [
+      { name: 'MySQL', iconClass: 'fa-solid fa-database', colorClass: 'text-sky-400' },
+      { name: 'PostgreSQL', iconClass: 'fa-solid fa-database', colorClass: 'text-blue-300' },
+      { name: 'MongoDB', iconClass: 'fa-solid fa-leaf', colorClass: 'text-green-500' },
+      { name: 'Prisma', iconClass: 'fa-regular fa-gem', colorClass: 'text-slate-200' },
+    ],
+  },
+  {
+    name: 'Tools',
+    skills: [
+      { name: 'Git', iconClass: 'fa-brands fa-git-alt', colorClass: 'text-orange-500' },
+      { name: 'Linux', iconClass: 'fa-brands fa-linux', colorClass: 'text-yellow-300' },
+      { name: 'Docker', iconClass: 'fa-brands fa-docker', colorClass: 'text-blue-400' },
+    ],
+  },
 ]
 
 export default function Skills() {
@@ -109,22 +134,26 @@ export default function Skills() {
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-20">
-        <Reveal variant="fade-down" className="text-center mb-10">
-          <h2 className="text-4xl font-bold font-heading text-[var(--heading-color)] inline-block relative">
+        <Reveal variant="fade-down" className="mb-12 text-center md:text-left">
+          <p className="skills-eyebrow">✱&nbsp; {t.skills.eyebrow}</p>
+          <h2 className="skills-title">
             {t.skills.title}
-            <div className="absolute -bottom-1 left-0 w-full h-1 bg-[var(--color-primary-soft)]/40 rounded-full"></div>
           </h2>
         </Reveal>
-        <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
-          {SKILLS_DATA.map((skill, index) => (
-            <Reveal key={skill.name} variant="zoom-in" delay={index * 80}>
-              <SkillIcon
-                name={skill.name}
-                iconClass={skill.iconClass}
-                colorClass={skill.colorClass}
-                customLabel={skill.customLabel}
-              />
-            </Reveal>
+        <div className="skills-categories">
+          {SKILL_CATEGORIES.map((category, categoryIndex) => (
+            <section className="skills-category" key={category.name} aria-labelledby={`skill-category-${category.name}`}>
+              <Reveal variant="fade-right" delay={categoryIndex * 70}>
+                <h3 id={`skill-category-${category.name}`} className="skills-category-title">{category.name}</h3>
+              </Reveal>
+              <div className="skills-category-items">
+                {category.skills.map((skill, skillIndex) => (
+                  <Reveal key={skill.name} variant="zoom-in" delay={categoryIndex * 70 + skillIndex * 55}>
+                    <SkillIcon {...skill} />
+                  </Reveal>
+                ))}
+              </div>
+            </section>
           ))}
         </div>
         <Contact />

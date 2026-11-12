@@ -89,7 +89,8 @@
     }
   },
   "skills": {
-    "title": "Skills & Technologies"
+    "title": "Skills & Technologies",
+    "eyebrow": "My stack"
   },
   "contact": {
     "title": "Let's Connect!",

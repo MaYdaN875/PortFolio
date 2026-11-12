@@ -89,7 +89,8 @@
     }
   },
   "skills": {
-    "title": "Habilidades y Tecnologías"
+    "title": "Habilidades y Tecnologías",
+    "eyebrow": "Mi stack"
   },
   "contact": {
     "title": "¡Conectemos!",
