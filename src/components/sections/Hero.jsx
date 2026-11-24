@@ -26,7 +26,7 @@ export default function Hero() {
             <Reveal variant="fade-up">
               <h1 className="md:text-[80px] text-5xl hero-display-title text-[var(--heading-color)] ">
                 <span className="pb-3 uppercase text-[var(--color-primary-soft)] tracking-wide">{t.hero.roleSecondary}</span>
-                <br />
+
                 <span >{roleWords.slice(0, -1).join(' ')}</span>
                 <span className="ml-4 tracking-wide">{roleWords.slice(-1)}</span>
               </h1>
@@ -47,11 +47,15 @@ export default function Hero() {
             </Reveal>
             <Reveal className='mt-3' variant="fade-up" delay={450}>
 
-              <p className="pl-6 text-gray-300">{t.hero.AvailableOpportunities}</p>
               <div
-                className="absolute top-1/4 h-4 w-4 animate-pulse rounded-full bg-green-400 shadow-[0_0_15px_#05df72] transition-transform duration-100 ease-out"
+                className="absolute  h-4 w-4 animate-pulse rounded-full bg-green-400 shadow-[0_0_15px_#05df72] transition-transform duration-100 ease-out"
                 style={{ transform: 'translateY(calc((var(--scroll-progress, 0.5) - 0.5) * -60px))' }}
-              />
+              >
+
+
+              </div>
+
+              <p className=" pl-6 text-gray-300">{t.hero.AvailableOpportunities}</p>
 
             </Reveal>
           </div>

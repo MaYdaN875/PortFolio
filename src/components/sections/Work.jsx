@@ -21,7 +21,7 @@ export default function Work() {
 
   return (
     <SectionContainer id="work" className="work-section overflow-hidden py-24 md:py-32">
-      <div className="absolute inset-x-0 top-0 z-[5] h-[745px] pointer-events-none"><div className="h-full w-full bg-cover bg-top bg-no-repeat" style={{ backgroundImage: 'url(projects.png)' }} /></div>
+      {/* <div className="absolute inset-x-0 top-0 z-[5] h-[745px] pointer-events-none"><div className="h-full w-full bg-cover bg-top bg-no-repeat" style={{ backgroundImage: 'url(projects.png)' }} /></div> */}
       {theme === 'dark' && <ParallaxStarField />}
 
       <div className="container relative z-10 mx-auto px-6">
